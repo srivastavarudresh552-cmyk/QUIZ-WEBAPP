@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of Maharashtra?",
+    "options": ["Pune", "Nagpur", "Mumbai", "Nashik"],
+    "answerIndex": 2
+  },
+  {
+    "id": 2,
+    "question": "What is the capital of Karnataka?",
+    "options": ["Mysuru", "Bengaluru", "Hubli", "Mangaluru"],
+    "answerIndex": 1
+  },
+  {
+    "id": 3,
+    "question": "What is the capital of Tamil Nadu?",
+    "options": ["Coimbatore", "Chennai", "Madurai", "Salem"],
+    "answerIndex": 1
+  },
+  {
+    "id": 4,
+    "question": "What is the capital of Rajasthan?",
+    "options": ["Jodhpur", "Jaipur", "Udaipur", "Ajmer"],
+    "answerIndex": 1
+  },
+  {
+    "id": 5,
+    "question": "What is the capital of West Bengal?",
+    "options": ["Darjeeling", "Kolkata", "Siliguri", "Howrah"],
+    "answerIndex": 1
+  },
+  {
+    "id": 6,
+    "question": "What is the capital of Gujarat?",
+    "options": ["Ahmedabad", "Vadodara", "Gandhinagar", "Surat"],
+    "answerIndex": 2
+  },
+  {
+    "id": 7,
+    "question": "What is the capital of Uttar Pradesh?",
+    "options": ["Varanasi", "Kanpur", "Lucknow", "Prayagraj"],
+    "answerIndex": 2
+  },
+  {
+    "id": 8,
+    "question": "What is the capital of Bihar?",
+    "options": ["Gaya", "Muzaffarpur", "Patna", "Bhagalpur"],
+    "answerIndex": 2
+  },
+  {
+    "id": 9,
+    "question": "What is the capital of Punjab?",
+    "options": ["Ludhiana", "Amritsar", "Patiala", "Chandigarh"],
+    "answerIndex": 3
+  },
+  {
+    "id": 10,
+    "question": "What is the capital of Assam?",
+    "options": ["Dispur", "Guwahati", "Silchar", "Dibrugarh"],
+    "answerIndex": 0
+  },
+  {
+    "id": 11,
+    "question": "What is the capital of Himachal Pradesh?",
+    "options": ["Shimla", "Manali", "Dharamshala", "Kullu"],
+    "answerIndex": 0
+  },
+  {
+    "id": 12,
+    "question": "What is the capital of Andhra Pradesh (as of now)?",
+    "options": ["Amaravati", "Vijayawada", "Visakhapatnam", "Guntur"],
+    "answerIndex": 3
+  }             
+]
