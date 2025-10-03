@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Webapp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="brand" aria-label="Application name">JS Quiz</div>
+        <div class="nav-right">
+            <div id="userDisplay" class="user-display" aria-live="polite" aria-atomic="true"></div>
+            <button id="themeToggle" class="icon-btn" aria-label="Toggle dark or light theme" tabindex="0" title="Toggle theme">
+                <span class="icon">🌓</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="app" class="container" role="main">
+        <!-- Login View -->
+        <section id="loginView" class="card" aria-labelledby="loginTitle">
+            <h1 id="loginTitle">Welcome to the INDIAN GEOGRAPHY Quiz</h1>
+            <p>Enter your name to begin.</p>
+            <form id="loginForm" class="login-form" aria-label="Login form">
+                <label for="nameInput">Name</label>
+                <input id="nameInput" name="name" type="text" placeholder="Your name" required aria-required="true" aria-label="Enter your name" />
+                <button id="startBtn" type="submit" class="primary" aria-label="Start quiz" tabindex="0">Start Quiz</button>
+            </form>
+        </section>
+
+        <!-- Quiz View -->
+        <section id="quizView" class="hidden" aria-labelledby="quizTitle">
+            <div class="quiz-header">
+                <h2 id="quizTitle">Answer the questions</h2>
+                <div class="timer" aria-live="polite">
+                    <span class="icon">⏳</span>
+                    <span id="timerDisplay">00:00</span>
+                </div>
+                <button id="endTestBtn" class="danger outline" aria-label="End test early" tabindex="0">End Test</button>
+            </div>
+
+            <div class="status-bar" role="status" aria-live="polite">
+                <div class="status-chip green" id="attemptedChip" aria-label="Attempted questions count">Attempted: <span id="attemptedCount">0</span></div>
+                <div class="status-chip red" id="unattemptedChip" aria-label="Unattempted questions count">Unattempted: <span id="unattemptedCount">0</span></div>
+                <div class="status-chip purple" id="reviewChip" aria-label="Questions marked for review count">Review: <span id="reviewCount">0</span></div>
+            </div>
+
+            <div id="progressBar" class="progress-bar" role="navigation" aria-label="Question navigation via progress bar"></div>
+
+            <section id="questionCard" class="card question-card" aria-live="polite" aria-labelledby="questionText">
+                <div class="question-top">
+                    <div id="questionIndex" class="question-index" aria-label="Question index">Question 1</div>
+                    <button id="markReviewBtn" class="secondary" aria-pressed="false" aria-label="Mark question for review" tabindex="0">Mark for Review</button>
+                </div>
+                <div id="questionText" class="question-text">Loading question...</div>
+                <div id="optionsList" class="options" role="radiogroup" aria-label="Answer options"></div>
+
+                <div id="feedback" class="feedback" aria-live="polite"></div>
+
+                <div class="question-actions">
+                    <button id="prevBtn" class="secondary" aria-label="Previous question" tabindex="0">Previous</button>
+                    <button id="nextBtn" class="primary" aria-label="Next question" tabindex="0">Next</button>
+                </div>
+            </section>
+        </section>
+
+        <!-- Results View -->
+        <section id="resultsView" class="hidden" aria-labelledby="resultsTitle">
+            <div class="card results-card">
+                <h2 id="resultsTitle">Your Results</h2>
+                <div class="score-line">
+                    <span class="label">Final Score:</span>
+                    <span id="finalScore" class="score"></span>
+                </div>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-label">Correct</div>
+                        <div id="sumCorrect" class="summary-value green"></div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Incorrect</div>
+                        <div id="sumIncorrect" class="summary-value red"></div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Attempted</div>
+                        <div id="sumAttempted" class="summary-value"></div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Unattempted</div>
+                        <div id="sumUnattempted" class="summary-value"></div>
+                    </div>
+                </div>
+
+                <div class="leaderboard" aria-labelledby="leaderboardTitle">
+                    <h3 id="leaderboardTitle">Top 3 Recent Scores</h3>
+                    <ol id="leaderboardList" class="leaderboard-list"></ol>
+                </div>
+
+                <div class="results-actions">
+                    <button id="reAttemptBtn" class="primary" aria-label="Re-attempt the test" tabindex="0">Re-Attempt Test</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for warnings -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+        <div class="modal-content">
+            <h3 id="modalTitle">Warning</h3>
+            <p id="modalDesc"></p>
+            <div class="modal-actions">
+                <button id="modalOkBtn" class="primary" aria-label="Acknowledge warning">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js" defer></script>
+</body>
+</html>
