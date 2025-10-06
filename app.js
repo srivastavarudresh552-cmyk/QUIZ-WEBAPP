@@ -7,7 +7,7 @@ const state = {
   selectedAnswers: {}, // key: questionId -> selected option index (number)
   markedForReview: new Set(), // questionId set
   correctness: {}, // questionId -> boolean (true correct, false incorrect)
-  timerSeconds: 15 * 60, // 15 minutes default; can be changed
+  timerSeconds: 15 * 60, // 15 minutes default; 
   timerId: null,
   warningsCount: 0, // tab switch warnings
   quizEnded: false
@@ -413,3 +413,4 @@ document.addEventListener("keydown", (e) => {
 
 // Expose for debugging
 window.__quizState = state;
+
